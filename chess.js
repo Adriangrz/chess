@@ -39,6 +39,7 @@ rl.question("Wpisz nazwę figury szachowej: ", function (chessman) {
             )
               console.log(`${chessBoard[index[0] + b][index[1] + a]}`);
         rl.close();
+        break;
       case "rook":
         for (let a = 0; a < 8; a++)
           if (chessBoard[a][index[1]] != positon)
@@ -47,6 +48,7 @@ rl.question("Wpisz nazwę figury szachowej: ", function (chessman) {
           if (chessBoard[index[0]][a] != positon)
             console.log(`${chessBoard[index[0]][a]}`);
         rl.close();
+        break;
       case "bishop":
         for (let a = 1; a < Math.min(index[0], index[1]) + 1; a++)
           if (chessBoard[index[0] - a][index[1] - a] != positon)
@@ -61,6 +63,28 @@ rl.question("Wpisz nazwę figury szachowej: ", function (chessman) {
           if (chessBoard[index[0] - a][index[1] + a] != positon)
             console.log(`${chessBoard[index[0] - a][index[1] + a]}`);
         rl.close();
+        break;
+      case "queen":
+        for (let a = 0; a < 8; a++)
+          if (chessBoard[a][index[1]] != positon)
+            console.log(`${chessBoard[a][index[1]]}`);
+        for (let a = 0; a < 8; a++)
+          if (chessBoard[index[0]][a] != positon)
+            console.log(`${chessBoard[index[0]][a]}`);
+        for (let a = 1; a < Math.min(index[0], index[1]) + 1; a++)
+          if (chessBoard[index[0] - a][index[1] - a] != positon)
+            console.log(`${chessBoard[index[0] - a][index[1] - a]}`);
+        for (let a = 1; a < 8 - Math.max(index[0], index[1]); a++)
+          if (chessBoard[index[0] + a][index[1] + a] != positon)
+            console.log(`${chessBoard[index[0] + a][index[1] + a]}`);
+        for (let a = 1; a <= 8 - Math.max(index[0], 9 - index[1]) + 1; a++)
+          if (chessBoard[index[0] + a][index[1] - a] != positon)
+            console.log(`${chessBoard[index[0] + a][index[1] - a]}`);
+        for (let a = 1; a <= Math.min(index[0], 9 - index[1]); a++)
+          if (chessBoard[index[0] - a][index[1] + a] != positon)
+            console.log(`${chessBoard[index[0] - a][index[1] + a]}`);
+        rl.close();
+        break;
     }
   });
 });
