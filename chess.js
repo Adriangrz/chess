@@ -27,9 +27,9 @@ function getIndexOf(arr, k) {
 
 rl.question("Wpisz nazwę figury szachowej: ", function (chessman) {
   rl.question("Wpisz pozycję: ", function (positon) {
+    let index = getIndexOf(chessBoard, positon);
     switch (chessman) {
       case "king":
-        let index = getIndexOf(chessBoard, positon);
         for (let a = -1; a < 2; a++)
           for (let b = -1; b < 2; b++)
             if (
@@ -38,6 +38,14 @@ rl.question("Wpisz nazwę figury szachowej: ", function (chessman) {
               chessBoard[index[0] + b][index[1] + a] != positon
             )
               console.log(`${chessBoard[index[0] + b][index[1] + a]}`);
+        rl.close();
+      case "rook":
+        for (let a = 0; a < 8; a++)
+          if (chessBoard[a][index[1]] != positon)
+            console.log(`${chessBoard[a][index[1]]}`);
+        for (let a = 0; a < 8; a++)
+          if (chessBoard[index[0]][a] != positon)
+            console.log(`${chessBoard[index[0]][a]}`);
         rl.close();
     }
   });
