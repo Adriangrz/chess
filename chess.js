@@ -85,6 +85,25 @@ rl.question("Wpisz nazwę figury szachowej: ", function (chessman) {
             console.log(`${chessBoard[index[0] - a][index[1] + a]}`);
         rl.close();
         break;
+      case "knight":
+        if (chessBoard[index[0] - 2][index[1] + 1] != positon)
+          console.log(`${chessBoard[index[0] - 2][index[1] + 1]}`);
+        if (chessBoard[index[0] - 1][index[1] + 2] != positon)
+          console.log(`${chessBoard[index[0] - 1][index[1] + 2]}`);
+        if (chessBoard[index[0] + 2][index[1] + 1] != positon)
+          console.log(`${chessBoard[index[0] + 2][index[1] + 1]}`);
+        if (chessBoard[index[0] + 1][index[1] + 2] != positon)
+          console.log(`${chessBoard[index[0] + 1][index[1] + 2]}`);
+        if (chessBoard[index[0] + 2][index[1] - 1] != positon)
+          console.log(`${chessBoard[index[0] + 2][index[1] - 1]}`);
+        if (chessBoard[index[0] + 1][index[1] - 2] != positon)
+          console.log(`${chessBoard[index[0] + 1][index[1] - 2]}`);
+        if (chessBoard[index[0] - 2][index[1] - 1] != positon)
+          console.log(`${chessBoard[index[0] - 2][index[1] - 1]}`);
+        if (chessBoard[index[0] - 1][index[1] - 2] != positon)
+          console.log(`${chessBoard[index[0] - 1][index[1] - 2]}`);
+        rl.close();
+        break;
     }
   });
 });
